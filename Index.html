@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+    <!-- Google fonts link -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- icons link -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Style.css" />
+    <script defer src="./Script.js"></script>
+    <title>Palindrome BirthDate</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header"><nav>Palindrome Birthday</nav></header>
+      <main class="main-container">
+        <section class="image-container">
+          <img src="/Assets/calender.png" alt="calender" class="image" />
+        </section>
+        <section class="date-container">
+          <p class="heading">
+            Enter your birthdate and we will tell you if it is palindrome or
+            not. If not, we will return the nearest palindrome date and the
+            number of days by which you missed it.
+          </p>
+          <p class="text-format">We will test your Birthdate in 3 formats:</p>
+          <p class="text-date">YYYY-MM-DD, MM-DD-YYYY, DD-MM-YYYY</p>
+          <div class="form-container">
+            <form class="form">
+              <div class="date">
+                <label for="date">Enter your birth date</label>
+                <input id="date" class="dateInput" type="date" />
+              </div>
+
+              <button class="btn-check">Check</button>
+            </form>
+            <div class="loading">
+              <div class="progress-outer">
+                
+              </div>                
+              </div>
+            </div>
+            <div class="result-container">
+              <h4 class="result">OOPS! Your birthday is not a palindrome.</h4>
+              <p>
+                The nearest palindrome is 22-02-2022 and you missed it by 217
+                days.
+              </p>
+             
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <ul class="link-list-item">
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=ashokpatel574@gmail.com"
+              target="_blank"
+              ><i class="bx bxl-gmail"></i
+            ></a>
+          </li>
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://www.linkedin.com/in/ashokpatel574/"
+              target="_blank"
+              ><i class="bx bxl-linkedin-square"></i
+            ></a>
+          </li>
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://github.com/ashokpatel574"
+              target="_blank"
+              ><i class="bx bxl-github"></i
+            ></a>
+          </li>
+          <li class="link-list">
+            <a
+              class="link"
+              href="https://twitter.com/ashokpatel574"
+              target="_blank"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </li>
+        </ul>
+        <p class="name">@Ashok Patel</p>
+      </footer>
+    </div>
+  </body>
+</html>

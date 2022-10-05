@@ -1,0 +1,294 @@
+:root {
+  --primary-color: #ffc727;
+  -text-color-one: #333;
+  --text-color-two: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+/* General style */
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  height: 100vh;
+  color: var(-text-color-one);
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  display: inline-block;
+  width: 100%;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+}
+
+input::placeholder {
+  background-color: transparent;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+}
+
+/* Header Style Section */
+
+.header nav {
+  font-size: 4.2rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  line-height: 5rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-color-two);
+  background-color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+/* Main container Style Section */
+
+.main-container {
+  max-width: 135rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.date-container,
+.image-container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.date-container .heading {
+  font-size: 2rem;
+  letter-spacing: 1.1px;
+  line-height: 3rem;
+  margin-bottom: 2rem;
+  word-wrap: break-word;
+}
+
+.text-format,
+.text-date {
+  font-size: 1.8rem;
+  letter-spacing: 1.1px;
+  word-wrap: break-word;
+  line-height: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  max-width: 35rem;
+}
+
+.loading {
+  max-width: 35em;
+  margin: 0 0 2rem 10rem;
+  height: 16rem;
+  width: 16rem;
+  display: none;
+}
+
+.progress-outer {
+  height: 16rem;
+  width: 16rem;
+  background: conic-gradient(#ffc727 6deg, #ffff 0deg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-outer::before {
+  content: "";
+  height: 12rem;
+  width: 12rem;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+label {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  font-weight: 400;
+  border-radius: 5px;
+  margin-bottom: 2.5rem;
+}
+
+.btn-check {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 2rem;
+  letter-spacing: 1.25px;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: var(--text-color-two);
+}
+
+/* Result container Style Section */
+
+.result-container {
+  max-width: 35rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 1rem 1rem;
+  text-align: center;
+  margin: 4rem 0;
+  display: none;
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 2rem 0;
+  letter-spacing: 1.2px;
+  line-height: 3rem;
+  padding: 2rem;
+}
+
+.result-container p {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  letter-spacing: 1.1px;
+  line-height: 3rem;
+}
+
+/* Footer Style Section */
+
+footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: var(--text-color-two);
+  background-color: var(--primary-color);
+  margin-top: 4rem;
+}
+
+.link-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+}
+
+i {
+  font-size: 3.6rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+i:hover {
+  transform: scale(1.25);
+}
+
+.name {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+/* Media Query Style Section */
+
+/* 960px / 16px --- 60em */
+
+@media (max-width: 60em) {
+  .header nav {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .date-container .heading {
+    font-size: 1.8rem;
+  }
+
+  .form-container {
+    max-width: 35rem;
+    margin: 0 auto;
+  }
+
+  .loading {
+    height: 14rem;
+    width: 14rem;
+  }
+
+  .progress-outer {
+    height: 14rem;
+    width: 14rem;
+  }
+
+  .progress-outer::before {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  /* Result container Style Section */
+
+  .result-container {
+    max-width: 38rem;
+    margin: 4rem auto;
+  }
+
+  /* Footer Style Section */
+
+  .name {
+    font-size: 1.6rem;
+  }
+}
