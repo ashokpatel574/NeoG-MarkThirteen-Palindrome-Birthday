@@ -17,42 +17,48 @@ form.addEventListener("submit", (e) => {
   resultContainer.style.display = "none";
 
   const dateInput = e.target[0].value;
-  const [year, month, date] = dateInput.split("-");
 
-  const hasPalindrome_birthdayResult = getDateFormat(
-    date.toString(),
-    month.toString(),
-    year.toString()
-  );
+  if (dateInput) {
+    const [year, month, date] = dateInput.split("-");
 
-  resultOutput.innerText = "";
-  resultText.innerText = "";
+    const hasPalindrome_birthdayResult = getDateFormat(
+      date.toString(),
+      month.toString(),
+      year.toString()
+    );
 
-  const timer_progressBar = setInterval(() => {
-    if (progressStartValue === progressEndValue) {
-      clearTimeout(timer_progressBar);
-      loadingContainer.style.display = "none";
-      resultContainer.style.display = "block";
-      resultContainer.scrollIntoView({ behavior: "smooth", bottom: 0 });
+    resultOutput.innerText = "";
+    resultText.innerText = "";
 
-      if (hasPalindrome_birthdayResult) {
-        resultOutput.innerText = `Yayy! Your birthday is palindrome in the format ${hasPalindrome_birthdayResult}.`;
-        resultText.style.display = "none";
-      } else {
-        const palindromeDate = find_PalindromeDate(dateInput);
+    const timer_progressBar = setInterval(() => {
+      if (progressStartValue === progressEndValue) {
+        clearTimeout(timer_progressBar);
+        loadingContainer.style.display = "none";
+        resultContainer.style.display = "block";
+        resultContainer.scrollIntoView({ behavior: "smooth", bottom: 0 });
 
-        resultOutput.innerText = `OOPS! Your birthday is not a palindrome.`;
-        resultText.style.display = "block";
+        if (hasPalindrome_birthdayResult) {
+          resultOutput.innerText = `Yayy! Your birthday is palindrome in the format ${hasPalindrome_birthdayResult}.`;
+          resultText.style.display = "none";
+        } else {
+          const palindromeDate = find_PalindromeDate(dateInput);
 
-        resultText.innerText = ` The nearest palindrome is ${palindromeDate[0]} and you missed it by ${palindromeDate[1]} days.`;
+          resultOutput.innerText = `OOPS! Your birthday is not a palindrome.`;
+          resultText.style.display = "block";
+
+          resultText.innerText = ` The nearest palindrome is ${palindromeDate[0]} and you missed it by ${palindromeDate[1]} days.`;
+        }
       }
-    }
 
-    progressStartValue++;
-    progressBar.style.background = `conic-gradient(#ffc727 ${
-      progressStartValue * 6
-    }deg, #ffff 0deg)`;
-  }, 50);
+      progressStartValue++;
+      progressBar.style.background = `conic-gradient(#ffc727 ${
+        progressStartValue * 6
+      }deg, #ffff 0deg)`;
+    }, 50);
+  } else {
+    loadingContainer.style.display = "none";
+    alert("Please enter your birth date");
+  }
 });
 
 ////////
